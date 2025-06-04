@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 20px; background-color: #f0f0f0; }
+        nav { margin-bottom: 20px; }
+        nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        nav a:hover { color: #0056b3; }
+        form { max-width: 300px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { display: block; margin: 10px 0 5px; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+        button { padding: 10px 20px; background: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        a { text-decoration: none; color: #007BFF; }
+        a:hover { color: #0056b3; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="typing-test.html">Typing Test</a>
+        <a href="test-results.html">Results</a>
+        <a href="about-us.html">About</a>
+    </nav>
+    <h1>Register</h1>
+    <form onsubmit="return validateForm(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            if (username && email && password) {
+                alert("Registration successful! Please login.");
+                window.location.href = "login.html";
+            } else {
+                alert("Please fill in all fields.");
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
