@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 20px; background-color: #f0f0f0; }
+        nav { margin-bottom: 20px; }
+        nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        nav a:hover { color: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #fff; margin: 10px 0; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: #007BFF; }
+        a:hover { color: #0056b3; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="typing-test.html">Typing Test</a>
+        <a href="test-results.html">Results</a>
+        <a href="about-us.html">About</a>
+    </nav>
+    <h1>Your Test Results</h1>
+    <ul id="results-list">
+        <li>Test 1: 45 WPM - 95% Accuracy</li>
+        <li>Test 2: 50 WPM - 98% Accuracy</li>
+        <li>Test 3: 42 WPM - 93% Accuracy</li>
+    </ul>
+    <p><a href="typing-test.html">Take another test</a></p>
+    <p><a href="index.html">Back to Home</a></p>
+    <script>
+        // Simulated dynamic addition (e.g., from localStorage in a real app)
+        const results = [
+            { wpm: 45, accuracy: 95 },
+            { wpm: 50, accuracy: 98 },
+            { wpm: 42, accuracy: 93 }
+        ];
+        const list = document.getElementById("results-list");
+        list.innerHTML = results.map(r => `<li>Test: ${r.wpm} WPM - ${r.accuracy}% Accuracy</li>`).join('');
+    </script>
+</body>
+</html>
